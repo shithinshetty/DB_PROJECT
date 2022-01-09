@@ -61,7 +61,7 @@
 </nav>
 <center>
 
-	<h1><b><u>Super Store Sales Management System</h1>
+	<h1><b><u>DECATHLON</h1>
 </center>	
 <div class="hero-image">
   <div class="hero-text">
