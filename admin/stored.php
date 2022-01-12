@@ -9,6 +9,7 @@ header("location: index.php"); // Redirecting To Home Page
 
   <head>
 
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -50,7 +51,7 @@ header("location: index.php"); // Redirecting To Home Page
         <a href="sales.php"><h5>Sales Report</h5></a>
         <a href="distd.php"><h5>Distributor Details</h5></a>
         <a href="stored.php"><h5>Store Details</h5></a>
-      </div>
+        </div>
     </nav>
     <center><div style="background-color:#F9E79F">
       <center><h2 style="font-size:30px;color:Black">Administrator Dashboard</h2></center>
