@@ -61,6 +61,7 @@ $query4 = "SELECT * from store where SID='$user_check'";
         <a href="ssales.php"><h5>Sales Report</h5></a>
         <a href="sorders.php"><h5>Store Orders</h5></a>
         <a href="sstock.php"><h5>Stock</h5></a>
+        <a href="sstock.php"><h5>Clearance</h5></a>
         <!--<a class="btn btn-primary" href="#">Sign In</a>-->
         
       </div>

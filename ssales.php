@@ -51,6 +51,7 @@ header("location: index.php"); // Redirecting To Home Page
         <a href="ssales.php"><h5>Sales Report</h5></a>
         <a href="sorders.php"><h5>Store Orders</h5></a>
         <a href="sstock.php"><h5>Stock</h5></a>
+        <a href="sstock.php"><h5>Clearance</h5></a>
         <!--<a class="btn btn-primary" href="#">Sign In</a>-->
         
       </div>
