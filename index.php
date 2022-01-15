@@ -22,7 +22,7 @@
 }
 </style>
 <body>
-
+<a href="about.php" style="float: right;color: blue">About Us </a>
 <center>
 <h1><b><u>SuperStore Sales Management System</h1>
 </center>	
