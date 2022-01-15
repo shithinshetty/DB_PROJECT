@@ -109,6 +109,27 @@ INSERT INTO `stock` (`CRY`, `SCRY`, `QUANT`, `SID`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `clearance`
+--
+
+CREATE TABLE `clearance` (
+  `TRY` varchar(20) NOT NULL,
+  `SICRY` varchar(20) NOT NULL,
+  `QUANT` int(11) NOT NULL,
+  `ACTUALPRICE` varchar(11) NOT NULL,
+  `DISCOUNTEDPRICE` varchar(11) NOT NULL,
+  `SID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+INSERT INTO `clearance` (`TRY`, `SICRY`, `QUANT`, `ACTUALPRICE`,`DISCOUNTEDPRICE`,`SID`) VALUES
+('Accessories', 'Bags',9,'RS.449','RS.199',102),
+('Beverages', 'Sports Drink',20,'RS.99','RS.89',103),
+('Electronics', 'Sports Watches',14,'RS.999','RS.849',103),
+('Clothing', 'Mens Sweathshirt ', 6,'RS.700','RS.499',102);
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `store`
 --
 
@@ -235,7 +256,12 @@ ALTER TABLE `sales`
 --
 ALTER TABLE `stock`
   ADD KEY `SID` (`SID`);
+--
+-- Indexes for table `clearance`
+--
 
+ALTER TABLE `clearance`
+  ADD KEY `SID` (`SID`);
 --
 -- Indexes for table `store`
 --
@@ -277,6 +303,8 @@ ALTER TABLE `store`
 ALTER TABLE `strorders`
   MODIFY `ORDID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=510;
 
+  
+
 --
 -- Constraints for dumped tables
 --
@@ -286,6 +314,12 @@ ALTER TABLE `strorders`
 --
 ALTER TABLE `stock`
   ADD CONSTRAINT `stock_ibfk_1` FOREIGN KEY (`SID`) REFERENCES `store` (`SID`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `stock`
+--
+ALTER TABLE `clearance`
+  ADD CONSTRAINT `clearance_ibfk_1` FOREIGN KEY (`SID`) REFERENCES `store` (`SID`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `strorders`
