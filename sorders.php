@@ -73,7 +73,7 @@ header("location: index.php"); // Redirecting To Home Page
       <div class="container">
         <div class="row">
           <div class="col-xl-9 mx-auto">
-            <h1 class="mb-5" style="font-size:40px">"Store Login- Publix Mart"</h1>
+            <h1 class="mb-5" style="font-size:40px">"Store Login- DECATHLON"</h1>
           </div>
          
         </div>
