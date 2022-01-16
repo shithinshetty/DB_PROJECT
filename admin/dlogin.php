@@ -38,9 +38,10 @@ margin-left: 5%;
 .login{
 
   width: 40%;
-  background-color:#F0B27A;
- border-color:#BDC3C7;
- border-style: solid;
+  background-color:teal;
+ border-color:blue;
+ border-style: dotted;
+ border-radius: 15px;
 }
 </style>
 <link href="css/business-casual.min.css" rel="stylesheet">
