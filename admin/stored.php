@@ -15,7 +15,7 @@ header("location: index.php"); // Redirecting To Home Page
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Administrator Login- Publix Mart</title>
+    <title>Administrator Login- DECATHLON</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -46,7 +46,7 @@ header("location: index.php"); // Redirecting To Home Page
     <!-- Navigation -->
     <nav class="navbar navbar-light bg-light static-top">
       <div class="container">
-        <a class="navbar-brand">Publix Mart</a>
+        <a class="navbar-brand">DECATHLON</a>
         <a href="dhome.php"><h5>Home</h5></a>
         <a href="sales.php"><h5>Sales Report</h5></a>
         <a href="distd.php"><h5>Distributor Details</h5></a>

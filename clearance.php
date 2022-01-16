@@ -25,7 +25,7 @@ header("location: index.php"); // Redirecting To Home Page
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Store Login- Publix Mart</title>
+    <title>Store Login- DECATHLON</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
