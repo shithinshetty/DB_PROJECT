@@ -22,10 +22,10 @@
 }
 </style>
 <body>
-<a href="about.php" style="float: right;color: blue">About Us </a>
+<a href="about.php" style="float: right;color: blue">About Us </a>	
 <center>
 <h1><b><u>DECATHLON</h1>
-</center>	
+</center>
 <div class="hero-image">
   <div class="hero-text">
 
