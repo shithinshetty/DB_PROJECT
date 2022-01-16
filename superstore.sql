@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2021 at 10:54 AM
+-- Generation Time: Jan 16, 2022 at 08:50 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.3.33
 
@@ -42,6 +42,31 @@ INSERT INTO `admin` (`ANAME`, `APASS`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `clearance`
+--
+
+CREATE TABLE `clearance` (
+  `TRY` varchar(20) NOT NULL,
+  `SICRY` varchar(20) NOT NULL,
+  `QUANT` int(11) NOT NULL,
+  `ACTUALPRICE` varchar(11) NOT NULL,
+  `DISCOUNTEDPRICE` varchar(11) NOT NULL,
+  `SID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `clearance`
+--
+
+INSERT INTO `clearance` (`TRY`, `SICRY`, `QUANT`, `ACTUALPRICE`, `DISCOUNTEDPRICE`, `SID`) VALUES
+('Accessories', 'Bags', 9, 'RS.449', 'RS.199', 102),
+('Beverages', 'Sports Drink', 20, 'RS.99', 'RS.89', 103),
+('Electronics', 'Sports Watches', 14, 'RS.999', 'RS.849', 103),
+('Clothing', 'Mens Sweathshirt ', 6, 'RS.700', 'RS.499', 102);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `dstbr`
 --
 
@@ -60,7 +85,38 @@ CREATE TABLE `dstbr` (
 INSERT INTO `dstbr` (`DID`, `DNAME`, `DPASS`, `DTYPE`, `DLOC`) VALUES
 (1000, 'Newfeel', 'admin', 'Bags', 'Delhi'),
 (1001, 'Quechua', 'admin', 'Camping/hiking Appar', 'Hyderbad'),
-(1002, 'Kalenji', 'admin', 'watches', 'Mumbai');
+(1002, 'Kalenji', 'admin', 'watches', 'Mumbai'),
+(1003, 'BTWN', 'admin', 'Cycles', 'Bangalore'),
+(1015, 'DOMYOS ', 'admin', 'Whey protein', 'Chennai'),
+(1016, 'Nike', 'admin', 'Shoes', 'Mangalore');
+
+--
+-- Triggers `dstbr`
+--
+DELIMITER $$
+CREATE TRIGGER `insertlogs` AFTER INSERT ON `dstbr` FOR EACH ROW INSERT INTO logs VALUES(NEW.DID,'Inserted',NOW())
+$$
+DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `logs`
+--
+
+CREATE TABLE `logs` (
+  `id` int(11) NOT NULL,
+  `action` varchar(20) NOT NULL,
+  `cdate` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `logs`
+--
+
+INSERT INTO `logs` (`id`, `action`, `cdate`) VALUES
+(1015, 'Inserted', '2022-01-16 13:08:36'),
+(1016, 'Inserted', '2022-01-16 13:19:21');
 
 -- --------------------------------------------------------
 
@@ -106,27 +162,6 @@ INSERT INTO `stock` (`CRY`, `SCRY`, `QUANT`, `SID`) VALUES
 ('Electronics', 'Mobiles', 30, 100),
 ('Clothing', 'Woolen', 20, 101);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `clearance`
---
-
-CREATE TABLE `clearance` (
-  `TRY` varchar(20) NOT NULL,
-  `SICRY` varchar(20) NOT NULL,
-  `QUANT` int(11) NOT NULL,
-  `ACTUALPRICE` varchar(11) NOT NULL,
-  `DISCOUNTEDPRICE` varchar(11) NOT NULL,
-  `SID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-
-INSERT INTO `clearance` (`TRY`, `SICRY`, `QUANT`, `ACTUALPRICE`,`DISCOUNTEDPRICE`,`SID`) VALUES
-('Accessories', 'Bags',9,'RS.449','RS.199',102),
-('Beverages', 'Sports Drink',20,'RS.99','RS.89',103),
-('Electronics', 'Sports Watches',14,'RS.999','RS.849',103),
-('Clothing', 'Mens Sweathshirt ', 6,'RS.700','RS.499',102);
 -- --------------------------------------------------------
 
 --
@@ -183,7 +218,17 @@ INSERT INTO `strorders` (`SID`, `ORDID`, `DID`, `ORDDATE`, `PMYSTAT`, `SHPMODE`,
 (100, 506, 1000, '2018-11-21 13:46:39', '', 'Normal', 'PENDING'),
 (100, 507, 1000, '2018-11-22 09:47:29', '', 'Normal', 'PENDING'),
 (100, 508, 1000, '2019-11-30 15:11:59', '', 'Normal', 'PENDING'),
-(100, 509, 1002, '2021-12-11 05:55:40', 'PENDING', 'Normal', 'PENDING');
+(100, 509, 1002, '2021-12-11 05:55:40', 'PENDING', 'Normal', 'PENDING'),
+(102, 510, 1000, '2022-01-16 06:11:51', 'PAID', 'Normal', 'Delivered'),
+(102, 1006, 1003, '2022-01-16 07:36:21', 'PENDING', 'Normal', 'PENDING'),
+(102, 1007, 1002, '2022-01-16 07:36:31', 'PENDING', 'Normal', 'PENDING'),
+(100, 1008, 1015, '2022-01-16 07:41:29', 'PENDING', 'Normal', 'PENDING'),
+(100, 1009, 1000, '2022-01-16 07:41:45', 'PENDING', 'Normal', 'PENDING'),
+(100, 1010, 1003, '2022-01-16 07:42:39', 'PENDING', 'Normal', 'PENDING'),
+(100, 1011, 1003, '2022-01-16 07:43:07', 'PENDING', 'Normal', 'PENDING'),
+(102, 1012, 1015, '2022-01-16 07:44:43', 'PENDING', 'Normal', 'PENDING'),
+(102, 1013, 1003, '2022-01-16 07:44:52', 'PENDING', 'Normal', 'PENDING'),
+(102, 1014, 1002, '2022-01-16 07:46:50', 'PENDING', 'Normal', 'PENDING');
 
 -- --------------------------------------------------------
 
@@ -233,17 +278,35 @@ INSERT INTO `t` (`temp`, `tee`) VALUES
 ('SREGION', '2018-11-30 19:58:50'),
 ('SBRANCHNAME', '2018-11-30 19:59:08'),
 ('SBRANCHNAME', '2018-12-01 04:09:12'),
-('501', '2018-12-01 04:15:09');
+('501', '2018-12-01 04:15:09'),
+('SBRANCHNAME', '2022-01-16 06:07:03'),
+('510', '2022-01-16 06:13:43'),
+('SCITY', '2022-01-16 07:23:17'),
+('SCITY', '2022-01-16 07:25:48'),
+('SCITY', '2022-01-16 07:29:12'),
+('SCITY', '2022-01-16 07:29:16');
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `clearance`
+--
+ALTER TABLE `clearance`
+  ADD KEY `SID` (`SID`);
+
+--
 -- Indexes for table `dstbr`
 --
 ALTER TABLE `dstbr`
   ADD PRIMARY KEY (`DID`);
+
+--
+-- Indexes for table `logs`
+--
+ALTER TABLE `logs`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `sales`
@@ -256,12 +319,7 @@ ALTER TABLE `sales`
 --
 ALTER TABLE `stock`
   ADD KEY `SID` (`SID`);
---
--- Indexes for table `clearance`
---
 
-ALTER TABLE `clearance`
-  ADD KEY `SID` (`SID`);
 --
 -- Indexes for table `store`
 --
@@ -283,7 +341,13 @@ ALTER TABLE `strorders`
 -- AUTO_INCREMENT for table `dstbr`
 --
 ALTER TABLE `dstbr`
-  MODIFY `DID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1003;
+  MODIFY `DID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1017;
+
+--
+-- AUTO_INCREMENT for table `logs`
+--
+ALTER TABLE `logs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1017;
 
 --
 -- AUTO_INCREMENT for table `sales`
@@ -295,31 +359,29 @@ ALTER TABLE `sales`
 -- AUTO_INCREMENT for table `store`
 --
 ALTER TABLE `store`
-  MODIFY `SID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `SID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
 
 --
 -- AUTO_INCREMENT for table `strorders`
 --
 ALTER TABLE `strorders`
-  MODIFY `ORDID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=510;
-
-  
+  MODIFY `ORDID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1015;
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `stock`
+-- Constraints for table `clearance`
 --
-ALTER TABLE `stock`
-  ADD CONSTRAINT `stock_ibfk_1` FOREIGN KEY (`SID`) REFERENCES `store` (`SID`) ON DELETE CASCADE;
+ALTER TABLE `clearance`
+  ADD CONSTRAINT `clearance_ibfk_1` FOREIGN KEY (`SID`) REFERENCES `store` (`SID`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `stock`
 --
-ALTER TABLE `clearance`
-  ADD CONSTRAINT `clearance_ibfk_1` FOREIGN KEY (`SID`) REFERENCES `store` (`SID`) ON DELETE CASCADE;
+ALTER TABLE `stock`
+  ADD CONSTRAINT `stock_ibfk_1` FOREIGN KEY (`SID`) REFERENCES `store` (`SID`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `strorders`
