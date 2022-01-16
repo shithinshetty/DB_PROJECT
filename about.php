@@ -41,7 +41,7 @@ body {
 
 <table cellspacing="50">
     <tr>
-      <td><img src="download (1).jpg" width="500"
+      <td><img src="download(1).jpg" width="500"
            height="500"alt="picture">
 </td>
 <td><h1 style="color: white;">SPORTS FOR ALL. ALL FOR SPORTS</h1>
