@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="C:\proj\stylesheet\login1.css">
-<title>Super Store Sales Management System</title>
+<title>DECATHLON</title>
 <style>
 .hero-image {
   background-image: url("decathlon2.PNG");
@@ -24,7 +24,7 @@
 <body>
 <a href="about.php" style="float: right;color: blue">About Us </a>
 <center>
-<h1><b><u>SuperStore Sales Management System</h1>
+<h1><b><u>DECATHLON</h1>
 </center>	
 <div class="hero-image">
   <div class="hero-text">

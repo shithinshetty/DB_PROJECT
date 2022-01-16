@@ -44,7 +44,7 @@ body {
       <td><img src="download (1).jpg" width="500"
            height="500"alt="picture">
 </td>
-<td><h1>Sport for All. All for Sport</h1>
+<td><h1 style="color: white;">SPORTS FOR ALL. ALL FOR SPORTS</h1>
 <p style="font-size:160%;"><em>“Sport for All. All for Sport.” is our motto for a reason! <br>
 You deserve to participate, try, get back up, aim higher and farther. <br>
 Whether you're just getting started or you're at the top of your game, <br>
