@@ -35,7 +35,7 @@ $query4 = "SELECT * from store where SID='$user_check'";
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Store Login- Publix Mart</title>
+    <title>Store Login- DECATHLON</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -55,7 +55,7 @@ $query4 = "SELECT * from store where SID='$user_check'";
     <!-- Navigation -->
     <nav class="navbar navbar-light bg-light static-top">
       <div class="container">
-        <a class="navbar-brand">Publix Mart</a>
+        <a class="navbar-brand">DECATHLON</a>
         <a href="shome.php"><h5>Home</h5></a>
         <a href="sprofile.php"><h5>Profile</h5></a>
         <a href="ssales.php"><h5>Sales Report</h5></a>

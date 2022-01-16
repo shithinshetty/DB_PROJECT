@@ -66,7 +66,7 @@ header("location: index.php"); // Redirecting To Home Page
       <div class="container">
         <div class="row">
           <div class="col-xl-9 mx-auto">
-            <h1 class="mb-5" style="font-size:40px">"Publix Mart"</h1>
+            <h1 class="mb-5" style="font-size:40px">"DECATHLON"</h1>
             <h1 class="mb-5" style="font-size:40px">Administrator Login</h1>
  <center><div style="background-color:#85C1E9">
       <center><h2 style="font-size:30px;color:Black">Sales Report</h2></center>
